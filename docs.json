@@ -1,68 +1,125 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Lize Docs",
+  "language": "pt-br",
+  "locale": "pt-BR",
+  "name": "Docs",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#EA580C",
+    "light": "#F97316",
+    "dark": "#C2410C"
   },
   "favicon": "/favicon.svg",
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Funcionalidades",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Visão geral",
             "pages": [
-              "index",
-              "quickstart",
-              "development"
+              "features/referencia"
             ]
           },
           {
-            "group": "Customization",
+            "group": "Coordenação",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
+              "features/coordenacao-gestao",
+              "features/coordenacao-gestao/gestao-de-coordenacoes",
+              "features/coordenacao-gestao/gestao-de-membros",
+              "features/coordenacao-gestao/permissoes-e-perfis-de-acesso",
+              "features/coordenacao-gestao/gestao-de-turmas",
+              "features/coordenacao-gestao/gestao-de-alunos",
+              "features/coordenacao-gestao/gestao-de-disciplinas",
+              "features/coordenacao-gestao/cadastro-via-planilha",
+              "features/coordenacao-gestao/cadastro-manual-de-usuarios",
+              "features/coordenacao-gestao/multiplas-unidades-escolares",
+              "features/coordenacao-gestao/sistema-de-ensino-personalizado",
+              "features/coordenacao-gestao/gestao-de-calendario-de-avaliacoes",
+              "features/coordenacao-gestao/ensalamento-de-alunos",
+              "features/coordenacao-gestao/malote-de-provas-impressao",
+              "features/coordenacao-gestao/log-de-auditoria",
+              "features/coordenacao-gestao/backup-e-seguranca-de-dados",
+              "features/coordenacao-gestao/lgpd-compliant",
+              "features/coordenacao-gestao/onboarding-e-treinamento",
+              "features/coordenacao-gestao/suporte-dedicado",
+              "features/coordenacao-gestao/gestao-centralizada"
             ]
           },
           {
-            "group": "Writing content",
+            "group": "Professor",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
+              "features/professor",
+              "features/professor/criacao-de-provas-personalizadas",
+              "features/professor/geracao-de-questoes-com-ia",
+              "features/professor/banco-de-questoes-publico",
+              "features/professor/banco-de-questoes-autorais",
+              "features/professor/diagramacao-automatica-de-provas",
+              "features/professor/modelos-de-prova-prontos",
+              "features/professor/criacao-de-listas-de-exercicios",
+              "features/professor/questoes-objetivas-e-discursivas",
+              "features/professor/questoes-categorizadas-por-bncc",
+              "features/professor/editor-de-questoes-com-imagens-e-formatacao",
+              "features/professor/revisao-pedagogica-de-questoes",
+              "features/professor/sistema-de-aprovacao-de-questoes",
+              "features/professor/simulados-enem",
+              "features/professor/geracao-de-gabaritos-online",
+              "features/professor/modelos-de-gabarito",
+              "features/professor/gabarito-com-lingua-estrangeira",
+              "features/professor/criacao-de-aplicacoes-presenciais-online",
+              "features/professor/agendamento-de-provas",
+              "features/professor/cartoes-resposta-personalizados",
+              "features/professor/configuracao-de-prazos",
+              "features/professor/correcao-automatica-de-questoes-objetivas",
+              "features/professor/correcao-de-questoes-discursivas",
+              "features/professor/validacao-manual-de-respostas",
+              "features/professor/deteccao-de-marcacao-dupla-rasuras-respostas-em-branco",
+              "features/professor/sistema-de-erratas",
+              "features/professor/dashboards-de-desempenho",
+              "features/professor/relatorios-por-aluno-turma-disciplina",
+              "features/professor/analise-por-competencias-e-habilidades",
+              "features/professor/analise-de-qualidade-das-questoes",
+              "features/professor/graficos-e-estatisticas",
+              "features/professor/exportacao-de-resultados",
+              "features/professor/analise-tri-e-tct",
+              "features/professor/identificacao-de-tendencias-de-aprendizado",
+              "features/professor/nps-de-avaliacoes",
+              "features/professor/feedback-do-professor-nas-questoes",
+              "features/professor/suporte-prioritario",
+              "features/professor/exportacao-pdf",
+              "features/professor/gestao-de-questoes",
+              "features/professor/criacao-e-edicao-de-provas"
             ]
           },
           {
-            "group": "AI tools",
+            "group": "Aluno",
             "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+              "features/aluno",
+              "features/aluno/acesso-ao-historico-de-provas",
+              "features/aluno/visualizacao-de-resultados",
+              "features/aluno/solicitacao-de-revisao-de-respostas",
+              "features/aluno/material-de-estudos",
+              "features/aluno/notificacoes-para-alunos",
+              "features/aluno/comentarios-de-resposta-por-questao",
+              "features/aluno/recebimento-de-feedback-do-professor"
+            ]
+          },
+          {
+            "group": "Compartilhadas / Multiperfis",
+            "pages": [
+              "features/compartilhadas"
             ]
           }
         ]
       },
       {
-        "tab": "API reference",
+        "tab": "Referência da API",
         "groups": [
           {
             "group": "API documentation",
             "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "api-reference/introduction",
+              "api-reference/swagger"
             ]
           }
         ]
@@ -77,26 +134,27 @@
         },
         {
           "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
+          "href": "https://blog.lizeedu.com.br/",
           "icon": "newspaper"
         }
       ]
     }
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/logo/logo.svg?v=2",
+    "dark": "/logo/logo.svg?v=2",
+    "href": "http://localhost:3000"
   },
   "navbar": {
     "links": [
       {
-        "label": "Support",
+        "label": "Suporte",
         "href": "mailto:hi@mintlify.com"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
+      "label": "Painel",
       "href": "https://dashboard.mintlify.com"
     }
   },
@@ -118,5 +176,6 @@
       "github": "https://github.com/mintlify",
       "linkedin": "https://linkedin.com/company/mintlify"
     }
-  }
+  },
+  "openapi": "api-reference/openapi.yaml?v=2"
 }

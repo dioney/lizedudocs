@@ -1,0 +1,2982 @@
+openapi: 3.0.3
+info:
+  title: Lize API
+  version: 2.0.0
+  description: Documentação da API de integração da plataforma Lize Remote.
+paths:
+  /api/v2/abilities/:
+    get:
+      operationId: abilities_list
+      description: Verify that the current user has all specified permissions.
+      parameters:
+      - name: limit
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - name: offset
+        required: false
+        in: query
+        description: The initial index from which to return the results.
+        schema:
+          type: integer
+      - name: ordering
+        required: false
+        in: query
+        description: Which field to use when ordering the results.
+        schema:
+          type: string
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      tags:
+      - Habilidades
+      security:
+      - oauth2:
+        - read
+        - write
+      - tokenAuth: []
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedAbiliityList'
+          description: ''
+  /api/v2/application-students-answers/:
+    get:
+      operationId: application_students_answers_list
+      description: Verify that the current user has all specified permissions.
+      parameters:
+      - name: limit
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - name: offset
+        required: false
+        in: query
+        description: The initial index from which to return the results.
+        schema:
+          type: integer
+      - name: ordering
+        required: false
+        in: query
+        description: Which field to use when ordering the results.
+        schema:
+          type: string
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      tags:
+      - Respostas
+      security:
+      - oauth2:
+        - read
+        - write
+      - tokenAuth: []
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedApplicationStudentAnswerList'
+          description: ''
+  /api/v2/application-students-results/:
+    get:
+      operationId: application_students_results_list
+      description: Verify that the current user has all specified permissions.
+      parameters:
+      - name: limit
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - name: offset
+        required: false
+        in: query
+        description: The initial index from which to return the results.
+        schema:
+          type: integer
+      - name: ordering
+        required: false
+        in: query
+        description: Which field to use when ordering the results.
+        schema:
+          type: string
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      tags:
+      - Resultados
+      security:
+      - oauth2:
+        - read
+        - write
+      - tokenAuth: []
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedApplicationStudentResultList'
+          description: ''
+  /api/v2/applications/:
+    get:
+      operationId: applications_list
+      description: Verify that the current user has all specified permissions.
+      parameters:
+      - name: limit
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - name: offset
+        required: false
+        in: query
+        description: The initial index from which to return the results.
+        schema:
+          type: integer
+      - name: ordering
+        required: false
+        in: query
+        description: Which field to use when ordering the results.
+        schema:
+          type: string
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      tags:
+      - Aplicações
+      security:
+      - oauth2:
+        - read
+        - write
+      - tokenAuth: []
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedApplicationList'
+          description: ''
+  /api/v2/base-texts/:
+    get:
+      operationId: base_texts_list
+      description: Verify that the current user has all specified permissions.
+      parameters:
+      - name: limit
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - name: offset
+        required: false
+        in: query
+        description: The initial index from which to return the results.
+        schema:
+          type: integer
+      - name: ordering
+        required: false
+        in: query
+        description: Which field to use when ordering the results.
+        schema:
+          type: string
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      tags:
+      - Textos base
+      security:
+      - oauth2:
+        - read
+        - write
+      - tokenAuth: []
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Paginatedbase_text_v2List'
+          description: ''
+  /api/v2/classes/:
+    get:
+      operationId: classes_list
+      description: 'class_type: 0 - Turma regular | 1 - Turma de sondagem <br>                             turn:
+        0 - Manhã | 1 - Tarde | 2 - Noite | 3 - Integral    '
+      parameters:
+      - name: limit
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - name: offset
+        required: false
+        in: query
+        description: The initial index from which to return the results.
+        schema:
+          type: integer
+      - name: ordering
+        required: false
+        in: query
+        description: Which field to use when ordering the results.
+        schema:
+          type: string
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      tags:
+      - Turmas
+      security:
+      - oauth2:
+        - read
+        - write
+      - tokenAuth: []
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedSchoolClassSimpleList'
+          description: ''
+    post:
+      operationId: classes_create
+      description: 'class_type: 0 - Turma regular | 1 - Turma de sondagem <br>                             turn:
+        0 - Manhã | 1 - Tarde | 2 - Noite | 3 - Integral    '
+      tags:
+      - Turmas
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SchoolClassCreate'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/SchoolClassCreate'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/SchoolClassCreate'
+        required: true
+      security:
+      - oauth2:
+        - read
+        - write
+      - tokenAuth: []
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SchoolClassCreate'
+          description: ''
+  /api/v2/classes/{id}/:
+    get:
+      operationId: classes_retrieve
+      description: Verify that the current user has all specified permissions.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - Turmas
+      security:
+      - oauth2:
+        - read
+        - write
+      - tokenAuth: []
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SchoolClassStudents'
+          description: ''
+  /api/v2/competences/:
+    get:
+      operationId: competences_list
+      description: Verify that the current user has all specified permissions.
+      parameters:
+      - name: limit
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - name: offset
+        required: false
+        in: query
+        description: The initial index from which to return the results.
+        schema:
+          type: integer
+      - name: ordering
+        required: false
+        in: query
+        description: Which field to use when ordering the results.
+        schema:
+          type: string
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      tags:
+      - Competências
+      security:
+      - oauth2:
+        - read
+        - write
+      - tokenAuth: []
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Paginatedcompetence_v2List'
+          description: ''
+  /api/v2/coordinations/:
+    get:
+      operationId: coordinations_list
+      description: Verify that the current user has all specified permissions.
+      parameters:
+      - name: limit
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - name: offset
+        required: false
+        in: query
+        description: The initial index from which to return the results.
+        schema:
+          type: integer
+      - name: ordering
+        required: false
+        in: query
+        description: Which field to use when ordering the results.
+        schema:
+          type: string
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      tags:
+      - Coordenações
+      security:
+      - oauth2:
+        - read
+        - write
+      - tokenAuth: []
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedSchoolCoordinationList'
+          description: ''
+  /api/v2/coordinations/members/:
+    get:
+      operationId: coordinations_members_list
+      description: Verify that the current user has all specified permissions.
+      parameters:
+      - name: limit
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - name: offset
+        required: false
+        in: query
+        description: The initial index from which to return the results.
+        schema:
+          type: integer
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      tags:
+      - Coordenações (Membros)
+      security:
+      - oauth2:
+        - read
+        - write
+      - tokenAuth: []
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedCoordinationMemberUserList'
+          description: ''
+  /api/v2/coordinations/members/{id}/remove/:
+    delete:
+      operationId: coordinations_members_remove_destroy
+      description: Verify that the current user has all specified permissions.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - Coordenações (Membros)
+      security:
+      - oauth2:
+        - read
+        - write
+      - tokenAuth: []
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '204':
+          description: No response body
+  /api/v2/coordinations/members/add/:
+    post:
+      operationId: coordinations_members_add_create
+      description: Verify that the current user has all specified permissions.
+      tags:
+      - Coordenações (Membros)
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CoordinationMemberUserCreate'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/CoordinationMemberUserCreate'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/CoordinationMemberUserCreate'
+        required: true
+      security:
+      - oauth2:
+        - read
+        - write
+      - tokenAuth: []
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CoordinationMemberUserCreate'
+          description: ''
+  /api/v2/coordinations/members/user/{id}/disable/:
+    post:
+      operationId: coordinations_members_user_disable_create
+      description: Verify that the current user has all specified permissions.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - Coordenações (Membros)
+      security:
+      - oauth2:
+        - read
+        - write
+      - tokenAuth: []
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+                description: Unspecified response body
+          description: ''
+  /api/v2/exam-questions/:
+    get:
+      operationId: exam_questions_list
+      description: Verify that the current user has all specified permissions.
+      parameters:
+      - name: limit
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - name: offset
+        required: false
+        in: query
+        description: The initial index from which to return the results.
+        schema:
+          type: integer
+      - name: ordering
+        required: false
+        in: query
+        description: Which field to use when ordering the results.
+        schema:
+          type: string
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      tags:
+      - Questões dos cadernos
+      security:
+      - oauth2:
+        - read
+        - write
+      - tokenAuth: []
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Paginatedexam_question_v2List'
+          description: ''
+  /api/v2/exam-teachers-subjects/:
+    get:
+      operationId: exam_teachers_subjects_list
+      description: Verify that the current user has all specified permissions.
+      parameters:
+      - name: limit
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - name: offset
+        required: false
+        in: query
+        description: The initial index from which to return the results.
+        schema:
+          type: integer
+      - name: ordering
+        required: false
+        in: query
+        description: Which field to use when ordering the results.
+        schema:
+          type: string
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      tags:
+      - Professores na prova
+      security:
+      - oauth2:
+        - read
+        - write
+      - tokenAuth: []
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedExamTeacherSubjectList'
+          description: ''
+  /api/v2/exams/:
+    get:
+      operationId: exams_list
+      description: Verify that the current user has all specified permissions.
+      parameters:
+      - name: limit
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - name: offset
+        required: false
+        in: query
+        description: The initial index from which to return the results.
+        schema:
+          type: integer
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      tags:
+      - Cadernos de prova
+      security:
+      - oauth2:
+        - read
+        - write
+      - tokenAuth: []
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedExamList'
+          description: ''
+  /api/v2/permissions/all_groups/:
+    get:
+      operationId: permissions_all_groups_retrieve
+      description: Verify that the current user has all specified permissions.
+      tags:
+      - Permissões
+      security:
+      - tokenAuth: []
+      responses:
+        '200':
+          description: No response body
+  /api/v2/questions/:
+    get:
+      operationId: questions_list
+      description: Verify that the current user has all specified permissions.
+      parameters:
+      - name: limit
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - name: offset
+        required: false
+        in: query
+        description: The initial index from which to return the results.
+        schema:
+          type: integer
+      - name: ordering
+        required: false
+        in: query
+        description: Which field to use when ordering the results.
+        schema:
+          type: string
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      tags:
+      - Questões
+      security:
+      - oauth2:
+        - read
+        - write
+      - tokenAuth: []
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Paginatedquestion_v2List'
+          description: ''
+  /api/v2/series/:
+    get:
+      operationId: series_list
+      description: Verify that the current user has all specified permissions.
+      parameters:
+      - in: query
+        name: level
+        schema:
+          type: integer
+          title: Ensino
+          enum:
+          - 0
+          - 1
+          - 2
+          - 3
+        description: |-
+          * `1` - Anos iniciais
+          * `2` - Anos finais
+          * `0` - Ensino Médio
+          * `3` - Ensino Superior
+      - name: limit
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - name: offset
+        required: false
+        in: query
+        description: The initial index from which to return the results.
+        schema:
+          type: integer
+      - name: ordering
+        required: false
+        in: query
+        description: Which field to use when ordering the results.
+        schema:
+          type: string
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      tags:
+      - Turmas
+      security:
+      - oauth2:
+        - read
+        - write
+      - tokenAuth: []
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Paginatedgrade_v2List'
+          description: ''
+  /api/v2/sso/generate_accesss_token/:
+    post:
+      operationId: sso_generate_accesss_token_create
+      description: Para autenticar o usuário após adquirir o 'access_token', você
+        deve direcioná-lo para         <a href='https://app.lizeedu.com.br/conta/sso/?access_token={access_token}'>https://app.lizeedu.com.br/conta/sso/?access_token={access_token}</a>
+      tags:
+      - Autenticação SSO
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SSOGenerateAcessToken'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/SSOGenerateAcessToken'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/SSOGenerateAcessToken'
+        required: true
+      security:
+      - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SSOGenerateAcessTokenResponse'
+          description: ''
+  /api/v2/students/:
+    get:
+      operationId: students_list
+      description: Verify that the current user has all specified permissions.
+      parameters:
+      - name: limit
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - name: offset
+        required: false
+        in: query
+        description: The initial index from which to return the results.
+        schema:
+          type: integer
+      - name: ordering
+        required: false
+        in: query
+        description: Which field to use when ordering the results.
+        schema:
+          type: string
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      tags:
+      - Alunos
+      security:
+      - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedStudentsList'
+          description: ''
+    post:
+      operationId: students_create
+      description: Verify that the current user has all specified permissions.
+      tags:
+      - Alunos
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StudentCreateUpdate'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/StudentCreateUpdate'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/StudentCreateUpdate'
+        required: true
+      security:
+      - tokenAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Students'
+          description: ''
+  /api/v2/students/{id}/:
+    get:
+      operationId: students_retrieve
+      description: Verify that the current user has all specified permissions.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+      tags:
+      - Alunos
+      security:
+      - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Students'
+          description: ''
+    put:
+      operationId: students_update
+      description: Verify that the current user has all specified permissions.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+      tags:
+      - Alunos
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StudentCreateUpdate'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/StudentCreateUpdate'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/StudentCreateUpdate'
+        required: true
+      security:
+      - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Students'
+          description: ''
+    patch:
+      operationId: students_partial_update
+      description: Verify that the current user has all specified permissions.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+      tags:
+      - Alunos
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedStudents'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedStudents'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedStudents'
+      security:
+      - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Students'
+          description: ''
+    delete:
+      operationId: students_destroy
+      description: Verify that the current user has all specified permissions.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+      tags:
+      - Alunos
+      security:
+      - tokenAuth: []
+      responses:
+        '204':
+          description: No response body
+  /api/v2/students/{id}/disable/:
+    post:
+      operationId: students_disable_create
+      description: Verify that the current user has all specified permissions.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+      tags:
+      - Alunos
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Students'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Students'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Students'
+        required: true
+      security:
+      - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Students'
+          description: ''
+  /api/v2/students/{id}/enable/:
+    post:
+      operationId: students_enable_create
+      description: Verify that the current user has all specified permissions.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+      tags:
+      - Alunos
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Students'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Students'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Students'
+        required: true
+      security:
+      - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Students'
+          description: ''
+  /api/v2/students/{id}/set_classes/:
+    post:
+      operationId: students_set_classes_create
+      description: Verify that the current user has all specified permissions.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+      tags:
+      - Alunos
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Students'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Students'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Students'
+        required: true
+      security:
+      - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Students'
+          description: ''
+  /api/v2/subjects/:
+    get:
+      operationId: subjects_list
+      description: Verify that the current user has all specified permissions.
+      parameters:
+      - name: limit
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - name: offset
+        required: false
+        in: query
+        description: The initial index from which to return the results.
+        schema:
+          type: integer
+      - name: ordering
+        required: false
+        in: query
+        description: Which field to use when ordering the results.
+        schema:
+          type: string
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      tags:
+      - Disciplinas
+      security:
+      - oauth2:
+        - read
+        - write
+      - tokenAuth: []
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedSubjectsList'
+          description: ''
+  /api/v2/teachers/:
+    get:
+      operationId: teachers_list
+      description: Verify that the current user has all specified permissions.
+      parameters:
+      - name: limit
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - name: offset
+        required: false
+        in: query
+        description: The initial index from which to return the results.
+        schema:
+          type: integer
+      - name: ordering
+        required: false
+        in: query
+        description: Which field to use when ordering the results.
+        schema:
+          type: string
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      tags:
+      - Professores
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedTeacherList'
+          description: ''
+    post:
+      operationId: teachers_create
+      description: Verify that the current user has all specified permissions.
+      tags:
+      - Professores
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Teacher'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Teacher'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Teacher'
+        required: true
+      security:
+      - tokenAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Teacher'
+          description: ''
+  /api/v2/teachers/{id}/:
+    get:
+      operationId: teachers_retrieve
+      description: Verify that the current user has all specified permissions.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+      tags:
+      - Professores
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Teacher'
+          description: ''
+    put:
+      operationId: teachers_update
+      description: Essa lógica não pode ser alterada sem testar o fluxo de criar e
+        atualizar professores
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+      tags:
+      - Professores
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Teacher'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Teacher'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Teacher'
+        required: true
+      security:
+      - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Teacher'
+          description: ''
+    patch:
+      operationId: teachers_partial_update
+      description: Verify that the current user has all specified permissions.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+      tags:
+      - Professores
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedTeacher'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedTeacher'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedTeacher'
+      security:
+      - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Teacher'
+          description: ''
+    delete:
+      operationId: teachers_destroy
+      description: Verify that the current user has all specified permissions.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+      tags:
+      - Professores
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '204':
+          description: No response body
+  /api/v2/teachers/{id}/add_subjects/:
+    post:
+      operationId: teachers_add_subjects_create
+      description: Verify that the current user has all specified permissions.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+      tags:
+      - Professores
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InspectorTeacherSubjects'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/InspectorTeacherSubjects'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/InspectorTeacherSubjects'
+        required: true
+      security:
+      - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InspectorTeacherSubjects'
+          description: ''
+  /api/v2/teachers/{id}/remove_subjects/:
+    delete:
+      operationId: teachers_remove_subjects_destroy
+      description: Verify that the current user has all specified permissions.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+      tags:
+      - Professores
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '204':
+          description: No response body
+  /api/v2/topics/:
+    get:
+      operationId: topics_list
+      description: Verify that the current user has all specified permissions.
+      parameters:
+      - name: limit
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - name: offset
+        required: false
+        in: query
+        description: The initial index from which to return the results.
+        schema:
+          type: integer
+      - name: ordering
+        required: false
+        in: query
+        description: Which field to use when ordering the results.
+        schema:
+          type: string
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      tags:
+      - Tópicos (assuntos abordados)
+      security:
+      - oauth2:
+        - read
+        - write
+      - tokenAuth: []
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Paginatedtopic_v2List'
+          description: ''
+  /api/v2/units/:
+    get:
+      operationId: units_list
+      description: Verify that the current user has all specified permissions.
+      parameters:
+      - name: limit
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - name: offset
+        required: false
+        in: query
+        description: The initial index from which to return the results.
+        schema:
+          type: integer
+      - name: ordering
+        required: false
+        in: query
+        description: Which field to use when ordering the results.
+        schema:
+          type: string
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      tags:
+      - Unidades
+      security:
+      - oauth2:
+        - read
+        - write
+      - tokenAuth: []
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedUnityList'
+          description: ''
+components:
+  schemas:
+    Abiliity:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        code:
+          type: string
+          title: Código da habilidade
+          maxLength: 150
+        text:
+          type: string
+          title: Habilidade
+          maxLength: 4096
+      required:
+      - code
+      - id
+      - text
+    Application:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        classes_ids:
+          type: string
+          readOnly: true
+        applicationstudents_ids:
+          type: string
+          readOnly: true
+        exam_id:
+          type: string
+          readOnly: true
+        date:
+          type: string
+          readOnly: true
+        start:
+          type: string
+          readOnly: true
+        end:
+          type: string
+          readOnly: true
+        finish_date:
+          type: string
+          readOnly: true
+        category_description:
+          type: string
+          readOnly: true
+        exam_name:
+          type: string
+          readOnly: true
+      required:
+      - applicationstudents_ids
+      - category_description
+      - classes_ids
+      - date
+      - end
+      - exam_id
+      - exam_name
+      - finish_date
+      - id
+      - start
+    ApplicationStudentAnswer:
+      type: object
+      properties:
+        id:
+          type: string
+          readOnly: true
+        exam_question:
+          type: string
+          readOnly: true
+        student_id:
+          type: string
+          readOnly: true
+        content:
+          type: string
+          readOnly: true
+        weight:
+          type: string
+          readOnly: true
+        grade:
+          type: string
+          readOnly: true
+        category:
+          type: string
+          readOnly: true
+      required:
+      - category
+      - content
+      - exam_question
+      - grade
+      - id
+      - student_id
+      - weight
+    ApplicationStudentResult:
+      type: object
+      properties:
+        student:
+          type: string
+          readOnly: true
+        enrollment:
+          type: string
+          readOnly: true
+        exam:
+          type: string
+          readOnly: true
+        exam_id:
+          type: string
+          readOnly: true
+        subject:
+          type: string
+          readOnly: true
+        subject_id:
+          type: string
+          readOnly: true
+        grade:
+          type: string
+          readOnly: true
+        exam_id_erp:
+          type: string
+          readOnly: true
+        subject_id_erp:
+          type: string
+          readOnly: true
+        stage_id_erp:
+          type: string
+          readOnly: true
+        student_id:
+          type: string
+          readOnly: true
+        application_id:
+          type: string
+          readOnly: true
+      required:
+      - application_id
+      - enrollment
+      - exam
+      - exam_id
+      - exam_id_erp
+      - grade
+      - stage_id_erp
+      - student
+      - student_id
+      - subject
+      - subject_id
+      - subject_id_erp
+    ClassTypeEnum:
+      enum:
+      - 0
+      - 1
+      type: integer
+      description: |-
+        * `0` - Turma Regular
+        * `1` - Turma de Sondagem
+    CoordinationMember:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        coordination:
+          type: string
+          format: uuid
+          title: Membro da coordenação
+        is_coordinator:
+          type: boolean
+          title: É coordenador
+        is_reviewer:
+          type: boolean
+          title: É revisor
+        is_pedagogic_reviewer:
+          type: boolean
+          title: É revisor pedagógico
+      required:
+      - coordination
+      - id
+    CoordinationMemberCreate:
+      type: object
+      properties:
+        coordination:
+          type: string
+          format: uuid
+          title: Membro da coordenação
+        is_coordinator:
+          type: boolean
+          title: É coordenador
+        is_reviewer:
+          type: boolean
+          title: É revisor
+        is_pedagogic_reviewer:
+          type: boolean
+          title: É revisor pedagógico
+      required:
+      - coordination
+    CoordinationMemberUser:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        name:
+          type: string
+          title: Nome
+          maxLength: 100
+        email:
+          type: string
+          format: email
+          title: Endereço de email
+          maxLength: 254
+        coordination_member:
+          type: array
+          items:
+            $ref: '#/components/schemas/CoordinationMember'
+        permission_groups:
+          type: array
+          items:
+            type: string
+            format: uuid
+      required:
+      - coordination_member
+      - email
+      - id
+    CoordinationMemberUserCreate:
+      type: object
+      properties:
+        name:
+          type: string
+          title: Nome
+          maxLength: 100
+        email:
+          type: string
+          format: email
+          title: Endereço de email
+          maxLength: 254
+        coordination_member:
+          type: array
+          items:
+            $ref: '#/components/schemas/CoordinationMemberCreate'
+        permission_groups:
+          type: array
+          items:
+            type: string
+            format: uuid
+      required:
+      - coordination_member
+      - email
+    Exam:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        name:
+          type: string
+          title: Título da avaliação
+          maxLength: 255
+        elaboration_deadline:
+          type: string
+          format: date
+          nullable: true
+          title: Prazo para elaboração
+        id_erp:
+          type: string
+          readOnly: true
+        stage_id_erp:
+          type: string
+          readOnly: true
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+          title: Registrado em
+        teaching_stage:
+          type: string
+          format: uuid
+          nullable: true
+          title: Etapa do ensino
+        education_system:
+          type: string
+          format: uuid
+          nullable: true
+          title: Sistema de ensino
+      required:
+      - created_at
+      - id
+      - id_erp
+      - name
+      - stage_id_erp
+    ExamTeacherSubject:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        teacher_id:
+          type: string
+          readOnly: true
+        exam_id:
+          type: string
+          format: uuid
+          readOnly: true
+        quantity:
+          type: integer
+          maximum: 32767
+          minimum: -32768
+          title: Quantidade de questões
+        note:
+          type: string
+          title: Observações
+        teacher_note:
+          type: string
+          nullable: true
+          title: Anotações do professor
+          description: Digite aqui alguma informação importante para sua coordenação
+        subject_id:
+          type: string
+          readOnly: true
+      required:
+      - exam_id
+      - id
+      - quantity
+      - subject_id
+      - teacher_id
+    InspectorTeacherSubjects:
+      type: object
+      properties:
+        subject:
+          type: string
+          format: uuid
+          title: Disciplina
+        active:
+          type: boolean
+        school_classes:
+          type: array
+          items:
+            type: string
+            format: uuid
+      required:
+      - school_classes
+      - subject
+    NullEnum:
+      enum:
+      - null
+    PaginatedAbiliityList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=400&limit=100
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=200&limit=100
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Abiliity'
+    PaginatedApplicationList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=400&limit=100
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=200&limit=100
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Application'
+    PaginatedApplicationStudentAnswerList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=400&limit=100
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=200&limit=100
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/ApplicationStudentAnswer'
+    PaginatedApplicationStudentResultList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=400&limit=100
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=200&limit=100
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/ApplicationStudentResult'
+    PaginatedCoordinationMemberUserList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=400&limit=100
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=200&limit=100
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/CoordinationMemberUser'
+    PaginatedExamList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=400&limit=100
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=200&limit=100
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Exam'
+    PaginatedExamTeacherSubjectList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=400&limit=100
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=200&limit=100
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/ExamTeacherSubject'
+    PaginatedSchoolClassSimpleList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=400&limit=100
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=200&limit=100
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/SchoolClassSimple'
+    PaginatedSchoolCoordinationList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=400&limit=100
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=200&limit=100
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/SchoolCoordination'
+    PaginatedStudentsList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=400&limit=100
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=200&limit=100
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Students'
+    PaginatedSubjectsList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=400&limit=100
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=200&limit=100
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Subjects'
+    PaginatedTeacherList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=400&limit=100
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=200&limit=100
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Teacher'
+    PaginatedUnityList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=400&limit=100
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=200&limit=100
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Unity'
+    Paginatedbase_text_v2List:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=400&limit=100
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=200&limit=100
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/base_text_v2'
+    Paginatedcompetence_v2List:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=400&limit=100
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=200&limit=100
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/competence_v2'
+    Paginatedexam_question_v2List:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=400&limit=100
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=200&limit=100
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/exam_question_v2'
+    Paginatedgrade_v2List:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=400&limit=100
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=200&limit=100
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/grade_v2'
+    Paginatedquestion_v2List:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=400&limit=100
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=200&limit=100
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/question_v2'
+    Paginatedtopic_v2List:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=400&limit=100
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=200&limit=100
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/topic_v2'
+    PatchedStudents:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        name:
+          type: string
+          title: Nome do aluno
+          maxLength: 100
+        enrollment_number:
+          type: string
+          title: Número de matrícula
+          maxLength: 255
+        client:
+          type: string
+          format: uuid
+          writeOnly: true
+          nullable: true
+          title: Cliente
+        classes:
+          type: string
+          readOnly: true
+        email:
+          type: string
+          format: email
+          title: Endereço de email
+          maxLength: 254
+        responsible_email:
+          type: string
+          format: email
+          nullable: true
+          title: Email do responsável
+          maxLength: 254
+        is_active:
+          type: boolean
+          readOnly: true
+        username:
+          type: string
+          readOnly: true
+        id_erp:
+          type: string
+          nullable: true
+          maxLength: 255
+        id_enrollment_erp:
+          type: string
+          nullable: true
+          title: ID de matrícula no ERP
+          maxLength: 255
+        responsible_email_two:
+          type: string
+          format: email
+          nullable: true
+          title: Segundo email do responsável
+          maxLength: 254
+    PatchedTeacher:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        name:
+          type: string
+          title: Nome
+          maxLength: 250
+        email:
+          type: string
+          format: email
+          title: Endereço de email
+          maxLength: 254
+        coordinations:
+          type: array
+          items:
+            type: string
+            format: uuid
+        teacher_subjects:
+          type: string
+          readOnly: true
+        can_viewed:
+          type: boolean
+          title: Dar Visto
+        can_approve:
+          type: boolean
+          title: Aprovar
+        can_fail:
+          type: boolean
+          title: Reprovar
+        can_update_note:
+          type: boolean
+          title: Atualizar Nota
+        can_suggest_correction:
+          type: boolean
+          title: Sugerir Correção
+        can_annul:
+          type: boolean
+          title: Pode anular
+        can_elaborate_questions:
+          type: boolean
+          title: Pode elaborar questões
+        can_response_wrongs:
+          type: boolean
+          title: Pode responder erratas
+        can_answer_wrongs_others_teachers:
+          type: boolean
+          title: Pode responder erratas de outros professores
+        can_correct_questions_other_teachers:
+          type: boolean
+          title: Pode corrigir respostas de alunos de cadernos de outros professores
+            da mesma disciplina
+        is_discipline_coordinator:
+          type: boolean
+          title: É coordenador de disciplina
+        permission_groups:
+          type: string
+          readOnly: true
+        is_active:
+          type: string
+          readOnly: true
+    SSOGenerateAcessToken:
+      type: object
+      properties:
+        email:
+          type: string
+          format: email
+      required:
+      - email
+    SSOGenerateAcessTokenResponse:
+      type: object
+      properties:
+        access_token:
+          type: string
+          format: uuid
+          readOnly: true
+        refresh_token:
+          type: string
+          format: uuid
+          readOnly: true
+        expire_in:
+          type: string
+          format: date-time
+          title: Expira em
+      required:
+      - access_token
+      - expire_in
+      - refresh_token
+    SchoolClassCreate:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        name:
+          type: string
+          title: Nome
+          maxLength: 250
+        grade:
+          type: string
+          format: uuid
+          nullable: true
+          title: Série
+        coordination:
+          type: string
+          format: uuid
+          title: Coordenação responsável
+        class_type:
+          allOf:
+          - $ref: '#/components/schemas/ClassTypeEnum'
+          title: Tipo de Turma
+          minimum: 0
+          maximum: 32767
+        school_year:
+          type: integer
+          maximum: 32767
+          minimum: -32768
+          default: 2025
+          title: Ano letivo da turma
+        turn:
+          nullable: true
+          title: Turno
+          minimum: 0
+          maximum: 32767
+          oneOf:
+          - $ref: '#/components/schemas/TurnEnum'
+          - $ref: '#/components/schemas/NullEnum'
+        is_itinerary:
+          type: boolean
+          title: É turma itinerária
+          description: Marque esta opção caso essa turma seja uma turma itinerária.
+        id_erp:
+          type: string
+          nullable: true
+          maxLength: 255
+      required:
+      - coordination
+      - id
+      - name
+    SchoolClassSimple:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        name:
+          type: string
+          title: Nome
+          maxLength: 250
+        coordination:
+          type: string
+          format: uuid
+          title: Coordenação responsável
+        school_year:
+          type: integer
+          maximum: 32767
+          minimum: -32768
+          default: 2025
+          title: Ano letivo da turma
+        temporary_class:
+          type: boolean
+          title: Turma temporária ou rotativa
+          description: Marque esta opção caso essa turma não seja regular.
+        grade:
+          $ref: '#/components/schemas/grade_v2'
+        is_itinerary:
+          type: boolean
+          title: É turma itinerária
+          description: Marque esta opção caso essa turma seja uma turma itinerária.
+        id_erp:
+          type: string
+          nullable: true
+          maxLength: 255
+      required:
+      - coordination
+      - grade
+      - id
+      - name
+    SchoolClassStudents:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        name:
+          type: string
+          title: Nome
+          maxLength: 250
+        coordination:
+          type: string
+          format: uuid
+          title: Coordenação responsável
+        school_year:
+          type: integer
+          maximum: 32767
+          minimum: -32768
+          default: 2025
+          title: Ano letivo da turma
+        students:
+          type: array
+          items:
+            type: string
+            format: uuid
+            title: Alunos dessa turma
+          title: Alunos dessa turma
+          description: Selecione acima os alunos que fazem parte dessa turma
+        is_itinerary:
+          type: boolean
+          title: É turma itinerária
+          description: Marque esta opção caso essa turma seja uma turma itinerária.
+        id_erp:
+          type: string
+          nullable: true
+          maxLength: 255
+      required:
+      - coordination
+      - id
+      - name
+    SchoolCoordination:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        name:
+          type: string
+          title: Nome da coordenação
+          maxLength: 255
+        unit:
+          type: string
+          format: uuid
+      required:
+      - id
+      - name
+      - unit
+    StudentCreateUpdate:
+      type: object
+      properties:
+        name:
+          type: string
+          title: Nome do aluno
+          maxLength: 100
+        enrollment_number:
+          type: string
+          title: Número de matrícula
+          maxLength: 255
+        classes:
+          type: string
+          readOnly: true
+        email:
+          type: string
+          format: email
+          title: Endereço de email
+          maxLength: 254
+        responsible_email:
+          type: string
+          format: email
+          nullable: true
+          title: Email do responsável
+          maxLength: 254
+        is_active:
+          type: boolean
+          readOnly: true
+        username:
+          type: string
+          default: ''
+        password:
+          type: string
+          default: ''
+        id_erp:
+          type: string
+          nullable: true
+          maxLength: 255
+        id_enrollment_erp:
+          type: string
+          nullable: true
+          title: ID de matrícula no ERP
+          maxLength: 255
+        responsible_email_two:
+          type: string
+          format: email
+          nullable: true
+          title: Segundo email do responsável
+          maxLength: 254
+      required:
+      - classes
+      - email
+      - enrollment_number
+      - is_active
+      - name
+    Students:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        name:
+          type: string
+          title: Nome do aluno
+          maxLength: 100
+        enrollment_number:
+          type: string
+          title: Número de matrícula
+          maxLength: 255
+        client:
+          type: string
+          format: uuid
+          writeOnly: true
+          nullable: true
+          title: Cliente
+        classes:
+          type: string
+          readOnly: true
+        email:
+          type: string
+          format: email
+          title: Endereço de email
+          maxLength: 254
+        responsible_email:
+          type: string
+          format: email
+          nullable: true
+          title: Email do responsável
+          maxLength: 254
+        is_active:
+          type: boolean
+          readOnly: true
+        username:
+          type: string
+          readOnly: true
+        id_erp:
+          type: string
+          nullable: true
+          maxLength: 255
+        id_enrollment_erp:
+          type: string
+          nullable: true
+          title: ID de matrícula no ERP
+          maxLength: 255
+        responsible_email_two:
+          type: string
+          format: email
+          nullable: true
+          title: Segundo email do responsável
+          maxLength: 254
+      required:
+      - classes
+      - email
+      - enrollment_number
+      - id
+      - is_active
+      - name
+      - username
+    Subjects:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        name:
+          type: string
+          title: Nome da disciplina
+          maxLength: 255
+        knowledge_area:
+          type: string
+        grades_code:
+          type: string
+          readOnly: true
+      required:
+      - grades_code
+      - id
+      - knowledge_area
+      - name
+    Teacher:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        name:
+          type: string
+          title: Nome
+          maxLength: 250
+        email:
+          type: string
+          format: email
+          title: Endereço de email
+          maxLength: 254
+        coordinations:
+          type: array
+          items:
+            type: string
+            format: uuid
+        teacher_subjects:
+          type: string
+          readOnly: true
+        can_viewed:
+          type: boolean
+          title: Dar Visto
+        can_approve:
+          type: boolean
+          title: Aprovar
+        can_fail:
+          type: boolean
+          title: Reprovar
+        can_update_note:
+          type: boolean
+          title: Atualizar Nota
+        can_suggest_correction:
+          type: boolean
+          title: Sugerir Correção
+        can_annul:
+          type: boolean
+          title: Pode anular
+        can_elaborate_questions:
+          type: boolean
+          title: Pode elaborar questões
+        can_response_wrongs:
+          type: boolean
+          title: Pode responder erratas
+        can_answer_wrongs_others_teachers:
+          type: boolean
+          title: Pode responder erratas de outros professores
+        can_correct_questions_other_teachers:
+          type: boolean
+          title: Pode corrigir respostas de alunos de cadernos de outros professores
+            da mesma disciplina
+        is_discipline_coordinator:
+          type: boolean
+          title: É coordenador de disciplina
+        permission_groups:
+          type: string
+          readOnly: true
+        is_active:
+          type: string
+          readOnly: true
+      required:
+      - coordinations
+      - email
+      - id
+      - is_active
+      - name
+      - permission_groups
+      - teacher_subjects
+    TurnEnum:
+      enum:
+      - 0
+      - 1
+      - 2
+      - 3
+      type: integer
+      description: |-
+        * `0` - Manhã
+        * `1` - Tarde
+        * `2` - Noite
+        * `3` - Integral
+    Unity:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        name:
+          type: string
+          title: Nome da Unidade
+          maxLength: 255
+      required:
+      - id
+      - name
+    base_text_v2:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        title:
+          type: string
+          title: Título
+          maxLength: 100
+        text:
+          type: string
+          title: Texto Base
+        creator:
+          type: string
+          readOnly: true
+      required:
+      - creator
+      - id
+      - text
+      - title
+    competence_v2:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        code:
+          type: string
+          nullable: true
+          title: Código da competência
+          maxLength: 150
+        text:
+          type: string
+          title: Competência
+          description: Descreva a competência acima
+          maxLength: 4096
+      required:
+      - id
+      - text
+    exam_question_v2:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        question_id:
+          type: string
+          format: uuid
+          title: Questão
+          readOnly: true
+        exam_id:
+          type: string
+          format: uuid
+          title: Prova
+          readOnly: true
+        request_id:
+          type: string
+          readOnly: true
+        order:
+          type: integer
+          maximum: 32767
+          minimum: -32768
+          title: Ordem na prova
+        weight:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,4}(?:\.\d{0,6})?$
+          title: Nota da questão na prova
+        status_description:
+          type: string
+          readOnly: true
+      required:
+      - exam_id
+      - id
+      - question_id
+      - request_id
+      - status_description
+    grade_v2:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        name:
+          type: string
+          title: Nome
+          maxLength: 50
+        level:
+          type: string
+      required:
+      - id
+      - level
+      - name
+    question_v2:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        level_description:
+          type: string
+          readOnly: true
+        enunciation:
+          type: string
+          title: Enunciado da questão
+        category_description:
+          type: string
+          readOnly: true
+        commented_awnser:
+          type: string
+          nullable: true
+          title: Resposta comentada
+        feedback:
+          type: string
+          nullable: true
+          title: Feedback do professor
+        alternatives_list:
+          type: string
+          readOnly: true
+        creator:
+          type: string
+          readOnly: true
+        topics_list:
+          type: string
+          readOnly: true
+        subject_id:
+          type: string
+          format: uuid
+          nullable: true
+          title: Disciplina
+          readOnly: true
+        abilities_list:
+          type: string
+          readOnly: true
+        competences_list:
+          type: string
+          readOnly: true
+        adapted:
+          type: boolean
+          title: Adaptada
+          description: Questão adaptada?
+        base_texts_list:
+          type: string
+          readOnly: true
+      required:
+      - abilities_list
+      - alternatives_list
+      - base_texts_list
+      - category_description
+      - competences_list
+      - creator
+      - enunciation
+      - id
+      - level_description
+      - subject_id
+      - topics_list
+    topic_v2:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        grade_name:
+          type: string
+          readOnly: true
+        subject_id:
+          type: string
+          format: uuid
+          readOnly: true
+        stage_description:
+          type: string
+          readOnly: true
+        name:
+          type: string
+          title: Título
+          maxLength: 4096
+        creator:
+          type: string
+          readOnly: true
+      required:
+      - creator
+      - grade_name
+      - id
+      - name
+      - stage_description
+      - subject_id
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid
+    oauth2:
+      type: oauth2
+      flows: {}
+    tokenAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: Token-based authentication with required prefix "Token"
+
+

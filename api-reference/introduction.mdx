@@ -1,33 +1,24 @@
 ---
-title: 'Introduction'
-description: 'Example section for showcasing API endpoints'
+title: 'Introdução'
+description: 'Referência da API Lize baseada em OpenAPI'
 ---
 
 <Note>
-  If you're not looking to build API reference documentation, you can delete
-  this section by removing the api-reference folder.
+  Esta seção é gerada a partir do arquivo OpenAPI em <code>api-reference/openapi.yaml</code>.
 </Note>
 
-## Welcome
+## Visão geral
 
-There are two ways to build API documentation: [OpenAPI](https://mintlify.com/docs/api-playground/openapi/setup) and [MDX components](https://mintlify.com/docs/api-playground/mdx/configuration). For the starter kit, we are using the following OpenAPI specification.
+Esta referência usa o arquivo OpenAPI local para montar os endpoints. Caso atualize o arquivo, rode o preview novamente e force atualização do navegador.
 
 <Card
-  title="Plant Store Endpoints"
-  icon="leaf"
-  href="https://github.com/mintlify/starter/blob/main/api-reference/openapi.json"
+  title="Especificação OpenAPI (local)"
+  icon="file-code"
+  href="/api-reference/openapi.yaml"
 >
-  View the OpenAPI specification file
+  Abrir o arquivo YAML
 </Card>
 
-## Authentication
+## Autenticação
 
-All API endpoints are authenticated using Bearer tokens and picked up from the specification file.
-
-```json
-"security": [
-  {
-    "bearerAuth": []
-  }
-]
-```
+Consulte o esquema de segurança diretamente no OpenAPI. Os esquemas disponíveis incluem OAuth2, Token e Basic, conforme declarado em <code>components.securitySchemes</code>.
