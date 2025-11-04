@@ -141,9 +141,9 @@
     }
   },
   "logo": {
-    "light": "/logo/logo.svg?v=2",
-    "dark": "/logo/logo.svg?v=2",
-    "href": "http://localhost:3000"
+    "light": "/logo/logo.svg",
+    "dark": "/logo/logo.svg",
+    "href": "/"
   },
   "navbar": {
     "links": [
